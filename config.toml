@@ -1,0 +1,6 @@
+[music]
+source_folder = "Music"
+file_extension = "opus"
+
+[preprocess]
+output_folder = "Data"

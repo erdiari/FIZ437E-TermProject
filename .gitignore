@@ -1,1 +1,6 @@
+Music/*.wav
 Music/*.opus
+Data/*.npy
+Data/*.npz
+.ipynb_checkpoints
+.vscode
