@@ -1,6 +1,7 @@
-Music/*.wav
-Music/*.opus
+Music/
+model/
 Data/*.npy
 Data/*.npz
 .ipynb_checkpoints
 .vscode
+training_checkpoints

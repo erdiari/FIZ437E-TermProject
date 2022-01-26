@@ -19,9 +19,15 @@ def read_and_process_music(config):
     for music_path in glob.glob(music_folder + "/*." + music_file_ext ):
         music_name = music_regex.sub('', music_path[len(music_folder)+1:],1)
         [data, sampling_rate] = librosa.load(music_path)
-        music_spectrum = librosa.stft(data)
-        S = np.abs(music_spectrum)
-        Data.append({'name': music_name, 'data': S})
+        if config['preprocess']['feature_extraction'] == 'mel':
+            music_spectrum = librosa.feature.melspectrogram(data,sampling_rate)
+        elif config['preprocess']['feature_extraction'] == 'mfcc':
+            music_spectrum = librosa.feature.mfcc(data,sampling_rate)
+        elif config['preprocess']['feature_extraction'] == 'stft':
+            music_spectrum = librosa.stft(data)
+        else:
+            raise Exception('Feature extraction method is undefined.')
+        Data.append({'name': music_name, 'data': music_spectrum})
     return Data
     
 def save_processed_music(config, data):

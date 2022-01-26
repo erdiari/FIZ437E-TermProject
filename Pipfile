@@ -9,6 +9,7 @@ jupyterlab = "*"
 librosa = "*"
 matplotlib = "*"
 toml = "*"
+tensorflow = "*"
 
 [dev-packages]
 
