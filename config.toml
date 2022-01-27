@@ -4,4 +4,4 @@ file_extension = "opus"
 
 [preprocess]
 output_folder = "Data"
-feature_extraction= "stft" # mel, mfcc, stft
+feature_extraction= "stft" # mel, mfcc, stft --> Usage of methods other than stft is not advised.
